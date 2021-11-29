@@ -17,8 +17,21 @@ namespace EchoArenaStats.Methods
             int assists = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["assists"]);
             int saves = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["saves"]);
             int stuns = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["stuns"]);
+            var otherTeam = 0;
+            switch (Team)
+            {
+                case 0:
+                    otherTeam = 1;
+                    break;
+                case 1:
+                    otherTeam = 0;
+                    break;
+            }
 
-            SaveData.SaveStats(points, assists, saves, stuns);
+            bool didWin = JsonConvert.SerializeObject(data?["teams"][Team]["stats"]["points"]) >
+                          JsonConvert.SerializeObject(data?["teams"][otherTeam]["stats"]["points"]);
+
+            SaveData.SaveStats(points, assists, saves, stuns, didWin);
 
         }
     }
