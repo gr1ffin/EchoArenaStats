@@ -44,10 +44,12 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Methods\CreateServer.cs" />
+        <Compile Include="Methods\CreateStorage.cs" />
         <Compile Include="Methods\EchoMain.cs" />
         <Compile Include="Methods\GetUrlC.cs" />
         <Compile Include="Methods\PlayerData.cs" />
         <Compile Include="Methods\PlayerLocation.cs" />
+        <Compile Include="Methods\RoundListener.cs" />
         <Compile Include="Methods\SaveData.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

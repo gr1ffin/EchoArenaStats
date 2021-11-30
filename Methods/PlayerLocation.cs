@@ -11,7 +11,7 @@ namespace EchoArenaStats.Methods
 
         public static void FindPlayer()
         {
-            var baseData = GetUrlC.GetUrl("http://localhost:5000");
+            var baseData = GetUrlC.GetUrl("http://127.0.0.1:6721/session");
             dynamic data = JsonConvert.DeserializeObject(baseData);
             System.Threading.Thread.Sleep(500);
             if (data != null) {

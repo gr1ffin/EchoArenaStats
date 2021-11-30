@@ -4,8 +4,10 @@
     {
         public static void Main()
         {
+            CreateStorage.CreateFile();
             CreateServer.StartServer();
             PlayerLocation.FindPlayer();
+            RoundListener.GameStatus();
         }
     }
 }
