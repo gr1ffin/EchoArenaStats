@@ -15,7 +15,7 @@ namespace EchoArenaStats.Methods
             dynamic data = JsonConvert.DeserializeObject(baseData);
             System.Threading.Thread.Sleep(500);
             if (data != null) {
-                _clientName = JsonConvert.SerializeObject((object) data["client_name"]);
+                _clientName = "Sk00py_"; //JsonConvert.SerializeObject((object) data["client_name"]);
                 for (var a = 0; a < 2; a++)
                 {
                     for (var b = 0; b < 4; b++)
