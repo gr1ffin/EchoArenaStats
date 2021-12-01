@@ -19,19 +19,18 @@ namespace EchoArenaStats.Methods
         public static void StartServer()
         {
             Console.WriteLine("Starting server...");
-            HttpListener.Prefixes.Add("http://localhost:5000/"); // add prefix "http://localhost:5000/"
+            HttpListener.Prefixes.Add("http://localhost:5000/");
             HttpListener.Prefixes.Add("http://localhost:5000/home/");
-            HttpListener.Start(); // start server (Run application as Administrator!)
+            HttpListener.Start(); 
             Console.WriteLine("Server started.");
             responseThread = new Thread(ResponseThread);
-            responseThread.Start(); // start the response thread
-
+            responseThread.Start(); 
+            
         }
 
         private static HttpListenerContext context;
         private static void ResponseThread()
         {
-
             while (true)
             {
                 const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
@@ -57,4 +56,6 @@ namespace EchoArenaStats.Methods
         }
         
     }
+    
+    
 }

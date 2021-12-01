@@ -1,6 +1,6 @@
 ﻿namespace EchoArenaStats.Methods
 {
-    public class EchoMain
+    public static class EchoMain
     {
         public static void Main()
         {
