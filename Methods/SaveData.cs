@@ -55,7 +55,8 @@ namespace EchoArenaStats.Methods
                 new JProperty("wins", wins),
                 new JProperty("losses", losses),
                 new JProperty("total", total),
-                new JProperty("winrate", winrate));
+                new JProperty("winrate", winrate),
+                new JProperty("hasRunBefore", true));
 
             const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
             File.Delete(path);

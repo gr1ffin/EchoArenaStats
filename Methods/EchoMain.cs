@@ -1,13 +1,19 @@
-﻿namespace EchoArenaStats.Methods
+﻿using System;
+
+namespace EchoArenaStats.Methods
 {
     public static class EchoMain
     {
         public static void Main()
         {
+            
             CreateStorage.CreateFile();
-            CreateServer.StartServer();
-            PlayerLocation.FindPlayer();
-            RoundListener.GameStatus();
+            HasRunBefore.RunBefore();
+            Console.Write(HasRunBefore.RunBefore());
+            HasRunBefore.TestRunBefore(HasRunBefore.RunBefore());
+            // CreateServer.StartServer();
+            // PlayerLocation.FindPlayer();
+            // RoundListener.GameStatus();
         }
     }
 }
