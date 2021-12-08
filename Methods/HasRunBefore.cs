@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
     public static class HasRunBefore
     {
@@ -24,16 +24,14 @@ namespace EchoArenaStats.Methods
 
                 var settingsFile = new JObject(
                     new JProperty("IP", "127.0.0.1"),
-                    new JProperty("Username", "UserName Here"));
-                var path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\settings.json";
+                    new JProperty("Username", "Username Here"));
+                const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\settings.json";
                 if (File.Exists(path)) Console.WriteLine("File Already Exists");
                 else
                 {
-                    using (StreamWriter file = File.CreateText(path))
-                    using (JsonTextWriter writer = new JsonTextWriter(file))
-                    {
-                        settingsFile.WriteTo(writer);
-                    }
+                    using var file = File.CreateText(path);
+                    using var writer = new JsonTextWriter(file);
+                    settingsFile.WriteTo(writer);
                 }
             }
         }

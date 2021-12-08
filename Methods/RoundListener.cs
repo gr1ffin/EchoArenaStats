@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
     public class RoundListener
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using Newtonsoft.Json;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
     public static class CreateServer
     {

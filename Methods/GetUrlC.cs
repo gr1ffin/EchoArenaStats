@@ -2,7 +2,7 @@
 using System.IO;
 using System.Net;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
     public static class GetUrlC
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
     public static class PlayerLocation
     {

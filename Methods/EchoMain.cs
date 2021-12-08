@@ -1,17 +1,16 @@
 ﻿using System;
 
-namespace EchoArenaStats.Methods
+namespace Methods
 {
-    public static class EchoMain
+    public static class Echo
     {
-        public static void Main()
+        public static void InitialRun()
         {
             
             CreateStorage.CreateFile();
             HasRunBefore.RunBefore();
             Console.Write(HasRunBefore.RunBefore());
             HasRunBefore.TestRunBefore(HasRunBefore.RunBefore());
-            // CreateServer.StartServer();
             // PlayerLocation.FindPlayer();
             // RoundListener.GameStatus();
         }
