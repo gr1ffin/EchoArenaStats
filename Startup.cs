@@ -7,7 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Westwind.AspNetCore.LiveReload;
 
 namespace TestWeb
 {
@@ -17,6 +19,7 @@ namespace TestWeb
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+
             
         }
 
@@ -29,7 +32,6 @@ namespace TestWeb
             }
 
             app.UseRouting();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
@@ -37,8 +39,22 @@ namespace TestWeb
                     const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
                     var toWrite = Convert.ToString(File.ReadAllText(path));
                     await context.Response.WriteAsync(toWrite);
+                  
                 });
             });
+        }
+        public static void ResponseReload()
+        {
+            HttpListener listener = new HttpListener();
+            listener.Prefixes.Add("/");
+            listener.Start();
+            HttpListenerContext context = listener.GetContext();
+            HttpListenerRequest Request = context.Request;
+            HttpListenerResponse response = context.Response;
+            context.Response.AppendHeader("Refresh", "10");
+
+
+
         }
     }
 }
