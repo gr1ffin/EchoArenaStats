@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+    <script>
+        fetch('https://localhost:7082/')
+            .then((response) => response.text().then(yourCallback));
+        
+        const outsideObj = []
+
+        async function yourCallback(retrievedText) {
+            console.log(retrievedText)
+            const obj = JSON.parse(retrievedText);
+            console.log(obj)
+
+            var points = obj["points"];
+            var assists = obj["assists"];
+            var saves = obj["saves"];
+            var stuns = obj["stuns"];
+            var wins = obj["wins"];
+            var losses = obj["losses"];
+            var total = obj["total"];
+            var winrate = (wins / total) * 100 + "%";
+            ;
+            document.getElementById("points").innerHTML = "Points:" + points;
+            document.getElementById("assists").innerHTML = "Assists:" + assists;
+            document.getElementById("saves").innerHTML = "Saves:" + saves;
+            document.getElementById("stuns").innerHTML = "Stuns:" + stuns;
+            // Separte
+            document.getElementById("wins").innerHTML = "Wins: " + wins;
+            document.getElementById("losses").innerHTML = "Losses: " + losses;
+            document.getElementById("total").innerHTML = "Total Games: " + total;
+            document.getElementById("winrate").innerHTML = "Winrate: " + winrate;
+        }
+       
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+        p {
+            font-family: 'Roboto', sans-serif;
+            margin: 40px;
+            line-height: 1px;
+        }
+    </style>
+</head>
+<body>
+    <p id="points"></p>
+    <p id="assists"></p>
+    <p id="saves"></p>
+    <p id="stuns"></p>
+    <br />
+    <p id="wins"></p>
+    <p id="losses"></p>
+    <p id="total"></p>
+    <p id="winrate"></p>
+
+</body>
+</html> 

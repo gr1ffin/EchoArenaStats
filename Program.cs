@@ -11,10 +11,13 @@ namespace TestWeb
 {
     public class Program
     {
+        public static int counter = 0;
         public static void Main(string[] args)
         {
             Methods.Echo.InitialRun();
+            Console.WriteLine("RunCheck");
             CreateHostBuilder(args).Build().Run();
+           
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -23,6 +26,9 @@ namespace TestWeb
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        
+
     }
   
 }

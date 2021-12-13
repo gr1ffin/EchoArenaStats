@@ -26,13 +26,15 @@ namespace Methods
                     new JProperty("IP", "127.0.0.1"),
                     new JProperty("Username", "Username Here"));
                 const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\settings.json";
-                if (File.Exists(path)) Console.WriteLine("File Already Exists");
-                else
-                {
-                    using var file = File.CreateText(path);
-                    using var writer = new JsonTextWriter(file);
-                    settingsFile.WriteTo(writer);
-                }
+                if (File.Exists(path)) {Console.WriteLine("File Already Exists"); Console.WriteLine("Has run before.");
+            }
+            else
+            {
+                using var file = File.CreateText(path);
+                using var writer = new JsonTextWriter(file);
+                settingsFile.WriteTo(writer);
+                    Console.WriteLine("First time running.");
+            }
             }
         }
     }

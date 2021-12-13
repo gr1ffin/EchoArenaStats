@@ -8,8 +8,7 @@ namespace Methods
         {
             
             CreateStorage.CreateFile();
-            HasRunBefore.RunBefore();
-            Console.Write(HasRunBefore.RunBefore());
+            //HasRunBefore.RunBefore();
             HasRunBefore.TestRunBefore(HasRunBefore.RunBefore());
             // PlayerLocation.FindPlayer();
             // RoundListener.GameStatus();

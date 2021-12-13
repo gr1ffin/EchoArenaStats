@@ -29,7 +29,7 @@
         private static void OnChanged(object source, FileSystemEventArgs e)
         {
             // Specify what is done when a file is changed, created, or deleted.
-            TestWeb.Startup.ResponseReload();
+            
         }
 
     }

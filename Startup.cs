@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -31,6 +32,8 @@ namespace TestWeb
                 app.UseDeveloperExceptionPage();
             }
 
+
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
@@ -43,18 +46,6 @@ namespace TestWeb
                 });
             });
         }
-        public static void ResponseReload()
-        {
-            HttpListener listener = new HttpListener();
-            listener.Prefixes.Add("/");
-            listener.Start();
-            HttpListenerContext context = listener.GetContext();
-            HttpListenerRequest Request = context.Request;
-            HttpListenerResponse response = context.Response;
-            context.Response.AppendHeader("Refresh", "10");
-
-
-
-        }
+      
     }
 }
