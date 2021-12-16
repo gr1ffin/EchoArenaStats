@@ -68,6 +68,7 @@ namespace Methods
                     initialStorage.WriteTo(writer);
                 }
             }
+            RoundListener.GameStatus();
         }
         
     }

@@ -8,7 +8,9 @@ namespace Methods
         private static readonly int Player = PlayerLocation.PlayerNum;
         public static void PlayerStats()
         {
-            var baseData = GetUrlC.GetUrl("http://localhost:5000");
+            var settingsData = File.ReadAllText("C:\\Users\\Public\\Documents\\EchoStatsLogger\\settings.json");
+            dynamic dataB = JsonConvert.DeserializeObject(settingsData);
+            var baseData = GetUrlC.GetUrl("http://" + JsonConvert.SerializeObject(dataB?["IP"]) + "/session");
             dynamic data = JsonConvert.DeserializeObject(baseData);
             System.Threading.Thread.Sleep(500);
 
