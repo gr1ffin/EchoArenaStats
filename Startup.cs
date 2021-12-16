@@ -12,7 +12,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Westwind.AspNetCore.LiveReload;
 
-namespace TestWeb
+namespace EchoStatsWeb
 {
     public class Startup
     {
@@ -21,7 +21,7 @@ namespace TestWeb
         public void ConfigureServices(IServiceCollection services)
         {
 
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,10 +42,10 @@ namespace TestWeb
                     const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
                     var toWrite = Convert.ToString(File.ReadAllText(path));
                     await context.Response.WriteAsync(toWrite);
-                  
+
                 });
             });
         }
-      
+
     }
 }

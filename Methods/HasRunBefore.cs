@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Methods
+namespace EchoStatsWeb.Methods
 {
     public static class HasRunBefore
     {
@@ -12,7 +12,7 @@ namespace Methods
         {
             var baseData = File.ReadAllText("C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json");
             dynamic data = JsonConvert.DeserializeObject(baseData);
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
             bool runCheck = JsonConvert.SerializeObject(data?["hasRunBefore"]) != "false";
             return runCheck;
         }
@@ -26,15 +26,17 @@ namespace Methods
                     new JProperty("IP", "127.0.0.1"),
                     new JProperty("Username", "Username Here"));
                 const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\settings.json";
-                if (File.Exists(path)) {Console.WriteLine("File Already Exists"); Console.WriteLine("Has run before.");
-            }
-            else
-            {
-                using var file = File.CreateText(path);
-                using var writer = new JsonTextWriter(file);
-                settingsFile.WriteTo(writer);
+                if (File.Exists(path))
+                {
+                    Console.WriteLine("File Already Exists"); Console.WriteLine("Has run before.");
+                }
+                else
+                {
+                    using var file = File.CreateText(path);
+                    using var writer = new JsonTextWriter(file);
+                    settingsFile.WriteTo(writer);
                     Console.WriteLine("First time running.");
-            }
+                }
             }
         }
     }

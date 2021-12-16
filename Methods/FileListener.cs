@@ -1,4 +1,4 @@
-﻿namespace Methods
+﻿namespace EchoStatsWeb.Methods
 {
     public class FileListener
     {
@@ -19,7 +19,7 @@
             watcher.Changed += new FileSystemEventHandler(OnChanged);
             watcher.Created += new FileSystemEventHandler(OnChanged);
             watcher.Deleted += new FileSystemEventHandler(OnChanged);
-       
+
 
             // Begin watching.
             watcher.EnableRaisingEvents = true;
@@ -29,7 +29,7 @@
         private static void OnChanged(object source, FileSystemEventArgs e)
         {
             // Specify what is done when a file is changed, created, or deleted.
-            
+
         }
 
     }

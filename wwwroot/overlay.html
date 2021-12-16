@@ -1,9 +1,10 @@
 ﻿<html>
 <head>
+    <meta http-equiv="refresh" content="300">
     <script>
         fetch('https://localhost:7082/')
             .then((response) => response.text().then(yourCallback));
-        
+
         const outsideObj = []
 
         async function yourCallback(retrievedText) {
@@ -18,7 +19,7 @@
             var wins = obj["wins"];
             var losses = obj["losses"];
             var total = obj["total"];
-            var winrate = (wins / total) * 100 + "%";
+            
             ;
             document.getElementById("points").innerHTML = "Points:" + points;
             document.getElementById("assists").innerHTML = "Assists:" + assists;
@@ -28,12 +29,14 @@
             document.getElementById("wins").innerHTML = "Wins: " + wins;
             document.getElementById("losses").innerHTML = "Losses: " + losses;
             document.getElementById("total").innerHTML = "Total Games: " + total;
-            document.getElementById("winrate").innerHTML = "Winrate: " + winrate;
+            var winrate = (wins / total) * 100;
+            document.getElementById("winrate").innerHTML = (winrate.toFixed(1) + "%");
         }
-       
+
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
         p {
             font-family: 'Roboto', sans-serif;
             margin: 40px;

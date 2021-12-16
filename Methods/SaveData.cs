@@ -5,16 +5,16 @@ using System.Runtime.InteropServices.ComTypes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Methods
+namespace EchoStatsWeb.Methods
 {
 
-    public static class SaveData 
+    public static class SaveData
     {
         public static void SaveStats(int points, int assists, int saves, int stuns, bool didWin)
         {
             var baseData = File.ReadAllText("C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json");
             dynamic data = JsonConvert.DeserializeObject(baseData);
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
 
             var oldPoints = JsonConvert.SerializeObject(data?["points"]);
             var oldAssists = JsonConvert.SerializeObject(data?["saves"]);
@@ -30,16 +30,16 @@ namespace Methods
             var newWins = 0;
             var newLosses = 0;
 
-            if (didWin) {newWins = oldWins + 1; newTotal += 1;}
-            else {newLosses = oldLosses + 1; newTotal += 1;}
+            if (didWin) { newWins = oldWins + 1; newTotal += 1; }
+            else { newLosses = oldLosses + 1; newTotal += 1; }
 
             var newPoints = oldPoints + points;
             var newAssists = oldAssists + assists;
             var newSaves = oldSaves + saves;
             var newStuns = oldStuns + stuns;
-            
+
             float winRate = (int)Math.Round((double)(100 * newWins) / newTotal);
-            
+
             NewData(newPoints, newAssists, newSaves, newStuns, newTotal, newWins, newLosses, winRate);
         }
 
@@ -70,7 +70,7 @@ namespace Methods
             }
             RoundListener.GameStatus();
         }
-        
+
     }
-    
+
 }

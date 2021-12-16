@@ -3,7 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Methods
+namespace EchoStatsWeb.Methods
 {
     public class CreateStorage
     {
@@ -19,7 +19,7 @@ namespace Methods
                 new JProperty("total", 0),
                 new JProperty("winrate", 00.00),
                 new JProperty("hasRunBefore", false));
-                
+
 
             var path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
             if (File.Exists(path)) Console.WriteLine("File Already Exists");

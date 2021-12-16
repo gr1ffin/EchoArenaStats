@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Methods
+namespace EchoStatsWeb.Methods
 {
     public static class PlayerLocation
     {
@@ -15,11 +15,12 @@ namespace Methods
             dynamic dataB = JsonConvert.DeserializeObject(settingsData);
             var baseData = GetUrlC.GetUrl("http://" + JsonConvert.SerializeObject(dataB?["IP"]) + "/session");
             dynamic data = JsonConvert.DeserializeObject(baseData);
-            System.Threading.Thread.Sleep(500);
-            
-            if (data != null) {
+            Thread.Sleep(500);
+
+            if (data != null)
+            {
                 _clientName = JsonConvert.SerializeObject((object)dataB?["username"]);
-                for (var a = 0; a < 2; a++) 
+                for (var a = 0; a < 2; a++)
                 {
                     for (var b = 0; b < 4; b++)
                     {

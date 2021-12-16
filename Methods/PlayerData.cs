@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Methods
+namespace EchoStatsWeb.Methods
 {
     public class PlayerData
     {
@@ -12,7 +12,7 @@ namespace Methods
             dynamic dataB = JsonConvert.DeserializeObject(settingsData);
             var baseData = GetUrlC.GetUrl("http://" + JsonConvert.SerializeObject(dataB?["IP"]) + "/session");
             dynamic data = JsonConvert.DeserializeObject(baseData);
-            System.Threading.Thread.Sleep(500);
+            Thread.Sleep(500);
 
             string playerName = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["name"]);
             int points = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["points"]);
