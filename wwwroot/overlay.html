@@ -2,15 +2,15 @@
 <head>
     <meta http-equiv="refresh" content="300">
     <script>
-        fetch('https://localhost:7082/')
-            .then((response) => response.text().then(yourCallback));
+         fetch('https://localhost:5000/')
+                .then((response) => response.text().then(yourCallback));
 
         const outsideObj = []
 
-        async function yourCallback(retrievedText) {
-            console.log(retrievedText)
-            const obj = JSON.parse(retrievedText);
-            console.log(obj)
+       async function yourCallback(retrievedText) {
+           console.log(retrievedText)
+
+           const obj = JSON.parse(retrievedText);
 
             var points = obj["points"];
             var assists = obj["assists"];
@@ -19,8 +19,7 @@
             var wins = obj["wins"];
             var losses = obj["losses"];
             var total = obj["total"];
-            
-            ;
+           
             document.getElementById("points").innerHTML = "Points:" + points;
             document.getElementById("assists").innerHTML = "Assists:" + assists;
             document.getElementById("saves").innerHTML = "Saves:" + saves;

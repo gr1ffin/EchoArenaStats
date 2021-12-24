@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,7 @@ namespace EchoStatsWeb
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            
 
 
         }
@@ -31,20 +33,43 @@ namespace EchoStatsWeb
             {
                 app.UseDeveloperExceptionPage();
             }
+            
 
 
-            app.UseStaticFiles();
+
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
                     const string path = "C:\\Users\\Public\\Documents\\EchoStatsLogger\\savedData.json";
-                    var toWrite = Convert.ToString(File.ReadAllText(path));
-                    await context.Response.WriteAsync(toWrite);
+                    var data2 = File.ReadAllText(path);
+                    dynamic data = JsonConvert.DeserializeObject(data2);
+
+                    var oldPoints = JsonConvert.SerializeObject(data?["points"]);
+                    var oldAssists = JsonConvert.SerializeObject(data?["saves"]);
+                    var oldSaves = JsonConvert.SerializeObject(data?["stuns"]);
+                    var oldStuns = JsonConvert.SerializeObject(data?["assists"]);
+                    // Separate 
+                    var oldTotal = JsonConvert.SerializeObject(data?["total"]);
+                    var oldWinrate = JsonConvert.SerializeObject(data?["winrate"]);
+                    var oldLosses = JsonConvert.SerializeObject(data?["losses"]);
+                    var oldWins = JsonConvert.SerializeObject(data?["wins"]);
+
+                    string toWrite = "Points: " + oldPoints + "@Assists: " + oldAssists + "@Saves: " + oldSaves + "@Stuns:" + oldStuns + "@" + "@Total Games: "  + oldTotal + "@Wins: " + oldWins + "@Losses: " + oldLosses + "@Win Rate: " + oldWinrate;
+
+
+                    // await context.Response.WriteAsync(toWrite.Replace("@", Environment.NewLine));
+
+                    var toWriteOther = Convert.ToString(File.ReadAllText(path));
+                    await context.Response.WriteAsync(toWriteOther);
+                    
+
 
                 });
             });
+            app.UseStaticFiles()
+            
         }
 
     }

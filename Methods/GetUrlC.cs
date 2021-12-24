@@ -8,7 +8,9 @@ namespace EchoStatsWeb.Methods
     {
         public static string GetUrl(string url)
         {
-            var wrGetUrl = WebRequest.Create(url);
+#pragma warning disable SYSLIB0014 // Type or member is obsolete
+            WebRequest? wrGetUrl = WebRequest.Create(url);
+#pragma warning restore SYSLIB0014 // Type or member is obsolete
             var objStream = wrGetUrl.GetResponse().GetResponseStream();
             var objReader = new StreamReader(objStream ?? throw new InvalidOperationException());
             //System.Threading.Thread.Sleep(5000);
