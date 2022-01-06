@@ -45,6 +45,30 @@ namespace EchoStats.Methods
                     PlayerData.PlayerStats();
                     break;
                 }
+                if (JsonConvert.SerializeObject(data?["game_status"]) != JsonConvert.SerializeObject(data2?["game_status"]))
+                {
+                    if (takeData.Substring(1, takeData.Length - 2) == "goal")
+                    {
+                        var lastPlayerToScore = JsonConvert.SerializeObject(data2?["last_score"]["person_scored"]);
+                        if (lastPlayerToScore == PlayerInfo.User)
+                        {
+                            var goalSpeed = JsonConvert.SerializeObject(data2?["last_score"]["disc_speed"]);
+                            var distanceScored = JsonConvert.SerializeObject(data2?["last_score"]["distance_thrown"]);
+                            var goalType = JsonConvert.SerializeObject(data2?["last_score"]["goal_type"]);
+                            Console.WriteLine(PlayerInfo.User + "scored a " + goalType + "from " + distanceScored + "at " + goalSpeed + "m/s!");
+                            var totalSpeed = JsonConvert.SerializeObject(data?["last_throw"]["total_speed"]);
+                            var armSpeed = JsonConvert.SerializeObject(data?["last_throw"]["speed_from_arm"]);
+                            var wristSpeed = JsonConvert.SerializeObject(data?["last_throw"]["speed_from_wrist"]);
+                            var movementSpeed = JsonConvert.SerializeObject(data?["last_throw"]["speed_from_movement"]);
+                            Console.WriteLine("Throw Information");
+                            Console.WriteLine("Total Speed: " + totalSpeed);
+                            Console.WriteLine("Arm Speed: " + armSpeed);
+                            Console.WriteLine("Wrist Speed; " + wristSpeed);
+                            Console.WriteLine("Movement Speed: " + movementSpeed);
+                        }
+                    }
+
+                }
                 else
                 {
                     Console.WriteLine(JsonConvert.SerializeObject(data2?["game_status"]));
