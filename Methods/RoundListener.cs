@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -11,7 +12,7 @@ namespace EchoStats.Methods
 
         public static int LocalTeam = PlayerLocation.TeamNum;
         public static int LocalPlayer = PlayerLocation.PlayerNum;
-
+        public static ArrayList GoalThrow = new ArrayList();
         public static void GameStatus()
         {
 
@@ -65,6 +66,7 @@ namespace EchoStats.Methods
                             Console.WriteLine("Arm Speed: " + armSpeed);
                             Console.WriteLine("Wrist Speed; " + wristSpeed);
                             Console.WriteLine("Movement Speed: " + movementSpeed);
+                            GoalThrow.Add(totalSpeed);
                         }
                     }
 
