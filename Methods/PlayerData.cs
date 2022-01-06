@@ -19,11 +19,12 @@ namespace EchoStats.Methods
             dynamic data = JsonConvert.DeserializeObject(baseData);
             Thread.Sleep(500);
 
+            
             string playerName = JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["name"]);
             int points = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["points"]));
             int assists = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["assists"]));
             int saves = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["saves"]));
-            int stuns = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["stuns"]));
+            int stuns = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["players"][Player]["stats"]["stuns"])); 
             var otherTeam = Team switch
             {
                 0 => 1,
@@ -31,8 +32,8 @@ namespace EchoStats.Methods
                 _ => 0
             };
 
-            bool didWin = Int32.Parse(JsonConvert.SerializeObject(data?["teams"][Team]["stats"]["points"])) >
-                          Int32.Parse(JsonConvert.SerializeObject(data?["teams"][otherTeam]["stats"]["points"]));
+            bool didWin = Convert.ToInt32(JsonConvert.SerializeObject(data?["teams"][Team]["stats"]["points"])) >
+                          Convert.ToInt32(JsonConvert.SerializeObject(data?["teams"][otherTeam]["stats"]["points"]));
 
             SaveData.SaveStats(points, assists, saves, stuns, didWin);
 

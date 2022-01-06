@@ -43,6 +43,7 @@ namespace EchoStats.Methods
                     Console.WriteLine("Post Match detected");
                     PlayerLocation.FindPlayer();
                     PlayerData.PlayerStats();
+                    break;
                 }
                 else
                 {

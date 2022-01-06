@@ -16,15 +16,15 @@ namespace EchoStats.Methods
             dynamic data = JsonConvert.DeserializeObject(baseData);
             Thread.Sleep(500);
 
-            var oldPoints = JsonConvert.SerializeObject(data?["points"]);
-            var oldAssists = JsonConvert.SerializeObject(data?["saves"]);
-            var oldSaves = JsonConvert.SerializeObject(data?["stuns"]);
-            var oldStuns = JsonConvert.SerializeObject(data?["assists"]);
+            var oldPoints = Int32.Parse(JsonConvert.SerializeObject(data?["points"]));
+            var oldAssists = Int32.Parse(JsonConvert.SerializeObject(data?["saves"]));
+            var oldSaves = Int32.Parse(JsonConvert.SerializeObject(data?["stuns"]));
+            var oldStuns = Int32.Parse(JsonConvert.SerializeObject(data?["assists"]));
             // Separate 
-            var oldTotal = JsonConvert.SerializeObject(data?["total"]);
+            var oldTotal = Int32.Parse(JsonConvert.SerializeObject(data?["total"]));
             var oldWinrate = JsonConvert.SerializeObject(data?["winrate"]);
-            var oldLosses = JsonConvert.SerializeObject(data?["losses"]);
-            var oldWins = JsonConvert.SerializeObject(data?["wins"]);
+            var oldLosses = Int32.Parse(JsonConvert.SerializeObject(data?["losses"]));
+            var oldWins = Int32.Parse(JsonConvert.SerializeObject(data?["wins"]));
 
             var newTotal = oldTotal;
             var newWins = 0;
@@ -70,8 +70,9 @@ namespace EchoStats.Methods
 #pragma warning disable 4014
             Overlay.WriteToOverlay(total, wins, losses, winrate);
 #pragma warning restore 4014
-            DailyStats.WhichOutput(points, assists, saves, stuns, total, wins, losses, winrate, didWin);
+            //DailyStats.WhichOutput(points, assists, saves, stuns, total, wins, losses, winrate, didWin);
             AverageStats(points, assists, saves, stuns, total, wins, losses, winrate);
+            Thread.Sleep(120000);
             RoundListener.GameStatus();
         }
 

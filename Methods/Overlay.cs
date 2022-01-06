@@ -21,7 +21,7 @@ namespace EchoStats.Methods
             string[] personalStats =
             {
                 "Points: " + p, "Assists: " + a, "Saves: " + s, "Stuns: " + st, "\n",
-                "Points Per Game" + ppg, "Assists Per Game: " + apg, "Saves Per Game:" + spg, "Stuns Per Game: " + stpg, "\n", 
+                "Points Per Game: " + ppg, "Assists Per Game: " + apg, "Saves Per Game:" + spg, "Stuns Per Game: " + stpg, "\n", 
                 "Total Games: " + t, "Wins: " + w, "Losses: " + l, "Win Rate: " + wr
             };
             await File.WriteAllLinesAsync(Echo.HomePath + "Stats.txt", personalStats);

@@ -1,0 +1,16 @@
+Points: 93
+Assists: 62
+Saves: 57
+Stuns: 68
+
+
+Points Per Game: 3
+Assists Per Game: 2
+Saves Per Game:1
+Stuns Per Game: 2
+
+
+Total Games: 31
+Wins: 0
+Losses: 11
+Win Rate: 0
