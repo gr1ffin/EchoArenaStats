@@ -27,7 +27,7 @@ In the **/Storage** folder, there are different files.
 
 
 ***
-If you need assistance with installation/problems occur while using the application, you can contact me through the [Echo Games](https://discord.gg/echogames) discord at **griffin#2050**. 
+If you need assistance with installation/problems occur while using the application, you can contact me through the [support discord](https://discord.gg/cQNNhMqaSy).
 
 
 ### Credits: 
