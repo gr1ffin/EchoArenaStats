@@ -1,4 +1,4 @@
-Total Games: 31
-Wins: 0
-Losses: 11
-Win Rate: 0
+Total Games: 1
+Wins: 1
+Losses: 0
+Win Rate: 100
