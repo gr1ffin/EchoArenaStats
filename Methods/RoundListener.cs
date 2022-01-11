@@ -20,16 +20,7 @@ namespace EchoStats.Methods
             dynamic dataB = JsonConvert.DeserializeObject(settingsData);
             string ip = Convert.ToString(JsonConvert.SerializeObject(dataB?["IP"]));
             string parsedIp = ip.Substring(1, ip.Length - 2);
-            // var baseData = GetUrlC.GetUrl("http://" + ip.Substring(1, ip.Length -2) + ":6721/session");
-            // dynamic data = JsonConvert.DeserializeObject(baseData);
-            // Thread.Sleep(500);
-            // var baseData2 = GetUrlC.GetUrl("http://" + ip.Substring(1, ip.Length -2) + ":6721/session");
-            // dynamic data2 = JsonConvert.DeserializeObject(baseData2);
-            bool ongoing = true;
-            // if (JsonConvert.SerializeObject(data?["game_status"]) ==
-            //     JsonConvert.SerializeObject(data2?["game_status"])) return;
-            //
-            // if (JsonConvert.SerializeObject(data2?["game_status"]) != "post_match") return;
+            
 
             while (true)
             {
