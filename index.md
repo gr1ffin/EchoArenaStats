@@ -12,6 +12,6 @@
 
 
 
-[Setup Instructions](setup.md)
-[OBS Integration](obs.md)
-[Support Discord/Contributions](discord.gg/pqfsuuvfcy)
+[Setup Instructions](setup.md)<br>
+[OBS Integration](obs.md) <br>
+[Support Discord/Contributions](https://discord.gg/pqfsuuvfcy) <br>
