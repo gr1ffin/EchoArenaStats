@@ -25,3 +25,8 @@
    
    
    **6.** Finally, rescale/reposition the text anywhere on your scene. It will update automatically after a match ends. 
+
+
+[Home](index.md)<br>
+[Setup Instructions](setup.md)<br>
+[Support Discord/Contributions](https://discord.gg/pqfsuuvfcy) <br>
