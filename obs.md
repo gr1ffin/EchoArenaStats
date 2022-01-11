@@ -1,5 +1,6 @@
- ## OBS Usage
- **1.** Add a Text source.
+# OBS Overlay Setup (works with Streamlabs)
+
+**1.** Add a Text source.
  
  ![img](img/img2.png)
  
