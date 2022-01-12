@@ -1,4 +1,6 @@
-## Data Collection
+## Information
+
+### Data Collection
 * **Simple Overlay**
   * Total Games, Wins, Losses, Win Rate
   * Best Used for Streaming/Recording through OBS.   
