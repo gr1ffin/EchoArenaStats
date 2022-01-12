@@ -11,7 +11,7 @@
   * Records same stats as above, however just for the day of playing.
  
  
- ## Basic Troubleshooting
+ ### Basic Troubleshooting
  * Make sure that the API is enabled in game settings. 
  * In `settings.json`, your IP should look like this: `127.0.0.1`. Do not include any slashes before/after. 
  * Make sure your username is spelled properly, and that you don't accidentally delete the quotation marks. 
