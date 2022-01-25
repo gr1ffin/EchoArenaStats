@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b05e8dbd-d3f5-4f1e-b4dd-fb1e35d131ed" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Methods/DailyStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/DailyStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Methods/FileListener.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Storage/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Storage/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Methods/PlayerLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Methods/PlayerLocation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,19 +21,26 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+      <changelist id="b05e8dbd-d3f5-4f1e-b4dd-fb1e35d131ed" name="Changes" comment="" />
       <created>1641299448351</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641299448351</updated>
       <workItem from="1641299448351" duration="8000" />
+      <workItem from="1642076974469" duration="201000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

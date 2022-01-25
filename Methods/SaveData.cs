@@ -40,13 +40,15 @@ namespace EchoStats.Methods
 
             float winRate = (int)Math.Round((double)(100 * newWins) / newTotal);
 
-            NewData(newPoints, newAssists, newSaves, newStuns, newTotal, newWins, newLosses, winRate, didWin);
+            
+
+            NewData(newPoints, newAssists, newSaves, newStuns, newTotal, newWins, newLosses, winRate, didWin, winstreak(didWin));
             
             
         }
 
         private static void NewData(int points, int assists, int saves, int stuns, int total, int wins, int losses,
-            float winrate, bool didWin)
+            float winrate, bool didWin, int winstreak)
         {
             var initialStorage = new JObject(
                 new JProperty("points", points),
@@ -57,6 +59,7 @@ namespace EchoStats.Methods
                 new JProperty("losses", losses),
                 new JProperty("total", total),
                 new JProperty("winrate", winrate),
+                new JProperty("winstreak"),
                 new JProperty("hasRunBefore", true));
 
             File.Delete(Echo.DataPath);
@@ -85,6 +88,25 @@ namespace EchoStats.Methods
 #pragma warning disable 4014
             Overlay.WriteToPersonal(points, assists, saves, stuns, ppg, apg, spg, stpg, total, wins, losses, winrate );
 #pragma warning restore 4014
+        }
+
+        private static dynamic winstreak(bool didWin)
+        {
+            if (didWin)
+            {
+                var baseData = File.ReadAllText(Echo.DataPath);
+                dynamic data = JsonConvert.DeserializeObject(baseData);
+                Thread.Sleep(500);
+
+                var oldWinStreak = Int32.Parse(JsonConvert.SerializeObject(data?["winstreak"]));
+                var winstreak = oldWinStreak + 1;
+                return winstreak;
+            }
+            else
+            {
+                var winstreak = 0;
+                return winstreak;
+            }
         }
 
     }

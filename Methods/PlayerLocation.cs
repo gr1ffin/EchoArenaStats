@@ -23,7 +23,7 @@ namespace EchoStats.Methods
 
             if (data != null)
             {
-                _clientName = JsonConvert.SerializeObject((object)dataB?["username"]);
+                _clientName = JsonConvert.SerializeObject((object)dataB?["username"]).Substring(1, JsonConvert.SerializeObject((object)dataB?["username"]).Length -2);
                 for (var a = 0; a < 2; a++)
                 {
                     for (var b = 0; b < 4; b++)
