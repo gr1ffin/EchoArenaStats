@@ -42,14 +42,15 @@ namespace EchoStats.Methods
 
             
 
-            NewData(newPoints, newAssists, newSaves, newStuns, newTotal, newWins, newLosses, winRate, didWin, winstreak(didWin));
+            NewData(newPoints, newAssists, newSaves, newStuns, newTotal, newWins, newLosses, winRate, didWin);
             
             
         }
 
         private static void NewData(int points, int assists, int saves, int stuns, int total, int wins, int losses,
-            float winrate, bool didWin, int winstreak)
+            float winrate, bool didWin)
         {
+            var winStreak = SaveData.winstreak(didWin);
             var initialStorage = new JObject(
                 new JProperty("points", points),
                 new JProperty("assists", assists),
@@ -59,7 +60,7 @@ namespace EchoStats.Methods
                 new JProperty("losses", losses),
                 new JProperty("total", total),
                 new JProperty("winrate", winrate),
-                new JProperty("winstreak"),
+                new JProperty("winstreak", winStreak),
                 new JProperty("hasRunBefore", true));
 
             File.Delete(Echo.DataPath);
