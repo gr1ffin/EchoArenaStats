@@ -30,7 +30,7 @@ namespace EchoStats.Methods
                 var baseData2 = GetUrlC.GetUrl("http://" + parsedIp + ":6721/session");
                 dynamic data2 = JsonConvert.DeserializeObject(baseData2);
                 var takeData = JsonConvert.SerializeObject(data2?["game_status"]);
-                if (takeData.Substring(1, takeData.Length -2) == "post_match")
+                if (takeData.Substring(1, takeData.Length -2) == "round_over") // post_match
                 {
                     Console.WriteLine("Post Match detected");
                     PlayerLocation.FindPlayer();

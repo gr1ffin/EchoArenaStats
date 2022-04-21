@@ -50,7 +50,7 @@ namespace EchoStats.Methods
         private static void NewData(int points, int assists, int saves, int stuns, int total, int wins, int losses,
             float winrate, bool didWin)
         {
-            var winStreak = SaveData.winstreak(didWin);
+            var winStreak = SaveData.Winstreak(didWin);
             var initialStorage = new JObject(
                 new JProperty("points", points),
                 new JProperty("assists", assists),
@@ -91,7 +91,7 @@ namespace EchoStats.Methods
 #pragma warning restore 4014
         }
 
-        private static dynamic winstreak(bool didWin)
+        private static dynamic Winstreak(bool didWin)
         {
             if (didWin)
             {

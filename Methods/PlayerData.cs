@@ -34,6 +34,7 @@ namespace EchoStats.Methods
 
             bool didWin = Convert.ToInt32(JsonConvert.SerializeObject(data?["teams"][Team]["stats"]["points"])) >
                           Convert.ToInt32(JsonConvert.SerializeObject(data?["teams"][otherTeam]["stats"]["points"]));
+            Console.WriteLine(didWin);
 
             SaveData.SaveStats(points, assists, saves, stuns, didWin);
 
